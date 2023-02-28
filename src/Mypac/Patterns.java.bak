@@ -135,6 +135,19 @@ public static <T> Set<T> uncommon_elements(T a[], T b[]) {
 	}
 
 	
+	public static <T> Set<T> uncommon_elements(T a[], T b[]) {
+	
+	Set<T> uncommon1 = new HashSet<T>(Arrays.asList(a));
+	uncommon1.removeAll(Arrays.asList(b));
 
+	Set<T> uncommon2 = new HashSet<T>(Arrays.asList(b));
+	uncommon2.removeAll(Arrays.asList(a));
+	
+	Set<T> uncommon = new HashSet<T>(uncommon1);
+	uncommon.addAll(uncommon2);
+	
+	return uncommon;
+	
+}
 	
 }
